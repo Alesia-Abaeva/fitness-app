@@ -1,18 +1,20 @@
-import React, { lazy } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ROUTES } from "./config";
+import { Home } from "./home";
 import { LayoutPage } from "./layout";
+import { NotFound } from "./notfound";
 
-// const Home = lazy(() => import("./home"));
-// const NotFound = lazy(() => import("./notfound"));
+// TODO: сделать lazy load
+// const Home = React.lazy(() => import("./home"));
+// const NotFound = React.lazy(() => import("./notfound"));
 
 const Routing: React.FC = () => {
   return (
     <Routes>
-      <Route path={ROUTES.main} element={<LayoutPage />}>
+      <Route path={ROUTES.home} element={<LayoutPage />}>
         <Route index element={<Home />} />
-        <Route path={`${ROUTES.detail}/:id`} element={<Login />} />
-
+        {/* <Route path={`${ROUTES.detail}/:id`} element={<Detail />} /> */}
         <Route path={ROUTES.notFound} element={<NotFound />} />
       </Route>
     </Routes>
