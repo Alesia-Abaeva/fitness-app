@@ -1,1 +1,3 @@
-export { default as LayoutPage } from './Layout';
+import LayoutPage from './Layout';
+
+export default LayoutPage;
